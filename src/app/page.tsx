@@ -19,7 +19,7 @@ export default function Home() {
       "Typescript,Javascript,Python,Java,C,C++",
       "NextJs , React",
       "CSS , HTML",
-      "Pogi"
+      "Malakas kumantot"
     ]
   };
 
