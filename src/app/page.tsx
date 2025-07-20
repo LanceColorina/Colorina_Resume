@@ -67,6 +67,16 @@ export default function Home() {
 
 const resumePreview = "/resume_preview.png";
 
+const pckReflection = {
+  title: "Reflection on PCK Results",
+  content: `
+    Reflecting on my assessment results, I gained a clearer understanding of the kind of work environment and roles where I can thrive. My top work values Achievement, Recognition, and Support align with careers that allow me to pursue challenging goals, be acknowledged for my efforts, and collaborate within structured support systems. This suggests I am driven by purpose and growth, but also value guidance and acknowledgment in the workplace.
+My occupational interests point toward Conventional and Realistic domains, which means I’m naturally inclined toward organized, detail-oriented work that follows clear procedures, as well as hands-on problem-solving involving tools, data, or real-world systems. This interest confirms my affinity for logical, structured tasks and reinforces the importance of clarity and stability in my chosen path.
+Cognitively, my strong skills in numerical reasoning, verbal comprehension, spatial recognition, and clerical accuracy suggest that I’m equipped to take on intellectually demanding roles, especially those requiring attention to detail, problem-solving, and communication. With these insights, I’m more confident in aligning my career path with roles that balance technical precision, analytical thinking, and a sense of purpose, such as programming, data analysis, or systems design.
+
+  `
+};
+
   return (
     <div className="bg-gradient-to-r from-neutral-50 via-neutral-100 to-neutral-200 p-7">
       {/* Profile Section */}
@@ -341,6 +351,22 @@ const resumePreview = "/resume_preview.png";
       </motion.div>
     ))}
   </motion.div>
+
+      {/* {PCK Section} */}
+        <motion.div
+        className="m-16 p-8 bg-gradient-to-r from-neutral-50 via-neutral-100 to-neutral-200 shadow-lg rounded-xl"
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-4xl font-bold text-black mb-4 font-mono">
+          {pckReflection.title}
+        </h2>
+        <p className="text-lg text-gray-700 leading-relaxed font-mono whitespace-pre-line">
+          {pckReflection.content}
+        </p>
+      </motion.div>
     </div>
   );
 }
