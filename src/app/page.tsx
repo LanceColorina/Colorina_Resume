@@ -1,5 +1,6 @@
 "use client";
-
+// APQ and PCK Results
+// Reflection on APQ and PCK
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -25,190 +26,321 @@ export default function Home() {
     ],
     value: [
       ["/typescript.png", "/javascript.png", "/python.png", "/java.png", "/c.png", "/cpp.png"],
-      ["/nextjs.png", "/react.png"],
-      ["/css.png", "/sql.png"],
-      ["Goal-Oriented", "Time-Management"]
+      ["/nextjs.png", "/react.png", "/handlebars.png", "/expressjs.png", "/tailwindcss.png", ],
+      ["/css.png", "/sql.png", "/mongodb.png", "/git.png", "/docker.png"],
+      ["Goal-Oriented", "Time-Management", "Self-Motivated", "Strong Work Ethic", "Fast Learner"]
     ]
   };
   
+  const projects = [
+  {
+    title: "Everything Sale Inventory",
+    role: "Frontend Developer",
+    description:
+      "Developed a web app to track stocks, orders, and trends using Express.js, Handlebars, TailwindCSS, and MongoDB. Maintained automated tests with Jest and worked closely with UI/UX.",
+  },
+  {
+    title: "Bridge Builders",
+    role: "Quality Assurance",
+    description:
+      "Tested NGO workflows end-to-end. Designed and executed test cases, performed exploratory testing, and reported bugs using Jira.",
+  },
+  {
+    title: "GreenHub Forum",
+    role: "Full-Stack Developer",
+    description:
+      "Built a full-stack student forum with Next.js, TailwindCSS, and MongoDB. Enabled responsive UI and real-time communication.",
+  },
+  {
+    title: "PhillexBot Legal Chatbot",
+    role: "AI Developer",
+    description:
+      "Created a chatbot using Streamlit, Qdrant, and LEGAL-BERT to answer legal questions on contracts and rentals with chunk-based retrieval.",
+  },
+  {
+    title: "Steam Game Recommendation Dashboard",
+    role: "Full-Stack Developer",
+    description:
+      "Built a web app to explore Steam games using MySQL and Next.js. Used OLAP techniques and Playwright for testing and performance.",
+  },
+];
+
+const resumePreview = "/resume_preview.png";
 
   return (
     <div className="bg-gradient-to-r from-neutral-50 via-neutral-100 to-neutral-200 p-7">
       {/* Profile Section */}
       <motion.div
-        className="m-16 h-[500px] flex flex-row items-center bg-gray-200 shadow-2xl rounded-2xl"
+        className="m-8 md:m-16 flex flex-col md:flex-row items-center bg-gray-100 shadow-2xl rounded-3xl overflow-hidden"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        {/* Image */}
+        {/* Image Section */}
         <motion.section
-          className="w-1/2 flex justify-center items-center rounded-2xl rounded-r-[300px] h-[500px] bg-gray-300"
-          initial={{ scale: 0.8 }}
+          className="w-full md:w-1/2 flex justify-center items-center bg-gradient-to-br from-gray-300 to-gray-400 p-10"
+          initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5, type: "spring" }}
         >
           <motion.div
-            whileHover={{ scale: 1.1 }}
-            className="rounded-full bg-slate-500 container flex justify-center items-center relative w-80 h-80"
+            whileHover={{ scale: 1.05 }}
+            className="rounded-full overflow-hidden border-4 border-white shadow-lg w-60 h-60 md:w-72 md:h-72 flex justify-center items-center"
           >
             <Image
               src="/profile.jpg"
               width={280}
-              height={150}
-              alt="Picture of the author"
-              className="rounded-full"
+              height={280}
+              alt="Lance Colorina"
+              className="object-cover w-full h-full"
             />
           </motion.div>
         </motion.section>
 
-        {/* Description */}
+        {/* Description Section */}
         <motion.section
-          className="w-1/2 flex flex-col items-center justify-center h-full bg-gray-200 pb-32 pt-32 m-5"
+          className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left p-10"
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl mb-4 font-semibold font-mono">
+          <h1 className="text-4xl md:text-5xl font-bold font-mono text-gray-800 mb-2">
             Lance Colorina
           </h1>
-          <div className="border-black w-3/4 border-b-4 border-solid mb-4"></div>
-          <h1 className="font-mono">Programmer</h1>
-          <h1 className="p-4 text-xl font-mono text-center">
-            A hardworking programmer with 3+ years of experience creating,
-            designing, and testing web applications. Developed and collaborated
-            on ample software projects used by various organizations and
-            communities.
-          </h1>
+          <div className="h-1 w-24 bg-slate-800 mb-4 rounded"></div>
+          <h2 className="text-lg font-semibold font-mono text-gray-700 mb-4">
+            Programmer & Software Developer
+          </h2>
+          <p className="text-md md:text-lg font-mono text-gray-600 leading-relaxed max-w-xl">
+            A passionate programmer with 3+ years of experience in designing,
+            developing, and testing web applications. Proven success in collaborating
+            with teams and building systems used by various organizations and
+            communities. Driven by curiosity, detail, and clean code.
+          </p>
         </motion.section>
       </motion.div>
 
-      {/* About + Skills Section */}
-      <motion.div
-      className="m-16 h-[500px] flex flex-col rounded-xl border-gray-800"
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-    >
-      <div className="flex">
-        <div className="text-4xl font-bold text-black pb-2 m-5 w-1/2 font-mono">
-          About Me
-        </div>
-        <div className="text-4xl font-bold text-black pb-2 m-5 w-1/2 font-mono">
-          Skills
-        </div>
-      </div>
+      {/* About Me + Skills Section */}
+        <motion.div
+          className="m-8 md:m-16 px-8 py-10 bg-gray-100 rounded-3xl shadow-xl"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex flex-col md:flex-row justify-between items-start mb-8">
+            <h2 className="text-4xl font-bold text-gray-800 font-mono mb-4 md:mb-0">
+              About Me
+            </h2>
+            <h2 className="text-4xl font-bold text-gray-800 font-mono">
+              Skills
+            </h2>
+          </div>
 
-      <div className="border-y-black border-b-4 border-solid ml-5 mr-5"></div>
+          <div className="border-b-4 border-gray-700 mb-8 w-full"></div>
 
-      <div className="flex">
-        {/* About Me Section */}
-        <div className="flex flex-col w-1/2">
-          {aboutMe.properties.map((property, index) => (
-            <motion.div
-              key={property}
-              className="flex flex-row m-5 text-xl font-medium font-mono"
-              initial={{ x: -30, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-black">
-                {property}
-                <span className="pl-2 pr-2">:</span>
-              </div>
-              <div className="text-black">{aboutMe.value[index]}</div>
-            </motion.div>
-          ))}
-        </div>
+          <div className="flex flex-col md:flex-row gap-10">
+            {/* About Me */}
+            <div className="w-full md:w-1/2 space-y-4">
+              {aboutMe.properties.map((property, index) => (
+                <motion.div
+                  key={property}
+                  className="text-lg md:text-xl font-mono flex flex-row"
+                  initial={{ x: -30, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="font-semibold text-gray-700 w-[150px]">
+                    {property}:
+                  </span>
+                  <span className="text-gray-800">{aboutMe.value[index]}</span>
+                </motion.div>
+              ))}
+            </div>
 
-    {/* Skills Section with Icons */}
-    <div className="flex flex-col w-1/2">
-          {skills.properties.map((property, index) => (
-            <motion.div
-              key={property}
-              className="flex flex-row m-5 text-xl font-medium font-mono"
-              initial={{ x: 30, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-black w-1/3">
-                {property}
-                <span className="pl-2 pr-2">:</span>
-              </div>
-
-              <div className="flex flex-wrap gap-2 items-center w-2/3">
-                {Array.isArray(skills.value[index]) ? (
-                  skills.value[index].map((item, idx) =>
-                    typeof item === "string" && item.endsWith(".png") ? (
-                      <Image
-                        key={idx}
-                        src={item}
-                        alt={property}
-                        width={32}
-                        height={32}
-                        className="hover:scale-110 transition-transform mx-2"
-                      />
+            {/* Skills */}
+            <div className="w-full md:w-1/2 space-y-6">
+              {skills.properties.map((property, index) => (
+                <motion.div
+                  key={property}
+                  className="text-lg md:text-xl font-mono"
+                  initial={{ x: 30, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="font-semibold text-gray-700 mb-1">{property}:</div>
+                  <div className="flex flex-wrap gap-3 items-center">
+                    {Array.isArray(skills.value[index]) ? (
+                      skills.value[index].map((item, idx) =>
+                        typeof item === "string" && item.endsWith(".png") ? (
+                          <Image
+                            key={idx}
+                            src={item}
+                            alt={property}
+                            width={36}
+                            height={36}
+                            className="hover:scale-110 transition-transform mx-1"
+                          />
+                        ) : (
+                          <span key={idx} className="bg-slate-200 px-2 py-1 rounded text-sm text-gray-700 shadow">
+                            {item}
+                          </span>
+                        )
+                      )
                     ) : (
-                      <span key={idx} className="text-black">{item}</span>
-                    )
-                  )
-                ) : (
-                  <span className="text-black">{skills.value[index]}</span>
-                )}
-              </div>
-            </motion.div>
-          ))}
+                      <span className="text-gray-800">{skills.value[index]}</span>
+                    )}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+
+      {/* Education Section */}
+<motion.div
+  className="m-8 md:m-16 px-8 py-10 bg-gray-100 rounded-3xl shadow-xl"
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+>
+  <h2 className="text-4xl font-bold text-gray-800 font-mono mb-6">
+    Education
+  </h2>
+  <div className="border-b-4 border-gray-700 mb-8 w-full"></div>
+
+  {/* University */}
+    <Link
+      href="https://www.dlsu.edu.ph/"
+      className="hover:scale-105 duration-300 block mb-8"
+      target="_blank"
+    >
+      <motion.div
+        className="flex flex-col md:flex-row bg-white shadow-md rounded-2xl overflow-hidden transition-transform duration-300"
+        whileHover={{ scale: 1.02 }}
+        transition={{ type: "spring", stiffness: 200 }}
+      >
+        <div className="bg-slate-200 flex justify-center items-center p-6 md:w-1/4">
+          <Image
+            src="/dlsu.png"
+            width={180}
+            height={180}
+            alt="DLSU Logo"
+            className="rounded-full scale-115"
+          />
         </div>
+        <div className="flex flex-col justify-center p-6 md:w-3/4 font-mono text-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+            <h3 className="text-2xl font-bold">
+              BS Computer Science – Major in Software Technology
+            </h3>
+            <span className="bg-green-500 text-white font-semibold text-lg px-4 py-1 rounded-xl mt-2 md:mt-0">
+              Expected: 2026
+            </span>
+          </div>
+          <p className="text-lg text-gray-600">De La Salle University</p>
+        </div>
+      </motion.div>
+    </Link>
+
+    {/* High School */}
+    <motion.div
+      className="flex flex-col md:flex-row bg-white shadow-md rounded-2xl overflow-hidden transition-transform duration-300"
+      whileHover={{ scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 200 }}
+    >
+      <div className="bg-slate-200 flex justify-center items-center p-6 md:w-1/4">
+        <Image
+          src="/fgpis.jpg" // replace with actual logo path if available
+          width={120}
+          height={120}
+          alt="FGPIS Logo"
+          className="rounded-full"
+        />
+      </div>
+      <div className="flex flex-col justify-center p-6 md:w-3/4 font-mono text-gray-800">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+          <h3 className="text-2xl font-bold">
+            Senior High School – STEM Strand
+          </h3>
+          <span className="bg-blue-500 text-white font-semibold text-lg px-4 py-1 rounded-xl mt-2 md:mt-0">
+            Graduated: 2022
+          </span>
+        </div>
+        <p className="text-lg text-gray-600">
+          Future Generation Philippine International School
+        </p>
       </div>
     </motion.div>
-
-
-      {/* Education */}
+  </motion.div>
+      {/* Resume Section */}
       <motion.div
-        className="m-16 h-[500px] flex flex-col rounded-xl border-gray-800"
+        className="m-16 flex flex-col md:flex-row items-center justify-between gap-12"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <div className="text-4xl font-bold text-black pb-2 m-5 w-1/2 font-mono">
-          Education
+        {/* Resume Preview Image on Left */}
+        <div className="flex justify-center w-full md:w-1/2">
+          <Image
+            src={resumePreview}
+            alt="Resume Preview"
+            width={540}
+            height={720}
+            className="rounded-lg border shadow-md  hover:scale-115 transition-transform duration-300"
+          />
         </div>
-        <div className="border-y-black border-b-4 border-solid ml-5 mr-5"></div>
 
-        <Link
-          href="https://www.dlsu.edu.ph/"
-          className="hover:scale-105 duration-300"
-        >
-          <motion.div
-            className="p-2 flex"
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 200 }}
+        {/* Resume Text and Download on Right */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start">
+          <h2 className="text-4xl font-bold text-black mb-4 font-mono text-center md:text-left">
+            Resume
+          </h2>
+          <p className="mb-4 font-mono text-lg text-center md:text-left">
+            Preview and download my resume below. It outlines my education, projects, and technical skills in detail.
+          </p>
+          <Link
+            href="/LanceColorina.pdf"
+            download
+            target="_blank"
+            className="bg-slate-700 text-white px-6 py-3 rounded-lg hover:bg-slate-900 transition font-mono text-lg"
           >
-            <Image
-              src="/dlsu.png"
-              width={300}
-              height={150}
-              alt="DLSU Logo"
-              className="rounded-full w-1/6"
-            />
-            <div className="flex-col w-5/6 font-mono p-3">
-              <div className="flex justify-between">
-                <div className="p-2 text-3xl font-bold">
-                  BS in Computer Science Major in Software Technology
-                </div>
-                <div className="p-2 text-2xl font-bold rounded-xl bg-slate-400">
-                  2026
-                </div>
-              </div>
-              <div className="p-2 text-xl">De La Salle University</div>
-            </div>
-          </motion.div>
-        </Link>
+            Download Resume
+          </Link>
+        </div>
       </motion.div>
+  {/* Projects Section */}
+  <motion.div
+    className="m-16 flex flex-col bg-white shadow-lg rounded-xl p-5"
+    initial={{ opacity: 0, y: 60 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    viewport={{ once: true }}
+  >
+    <div className="text-4xl font-bold text-black mb-8 font-mono">
+      Projects
+    </div>
+
+    {/* Each Project */}
+    {projects.map((proj, i) => (
+      <motion.div
+        key={i}
+        className="mb-6 border-b border-gray-300 pb-4"
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4, delay: i * 0.1 }}
+      >
+        <h2 className="text-2xl font-semibold font-mono">{proj.title}</h2>
+        <p className="text-md italic font-mono text-gray-600">{proj.role}</p>
+        <p className="text-md font-mono mt-2">{proj.description}</p>
+      </motion.div>
+    ))}
+  </motion.div>
     </div>
   );
 }
