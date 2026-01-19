@@ -16,6 +16,24 @@ export default function Home() {
       "October 1, 2003",
     ],
   };
+  const organizations = [
+  {
+    name: "Archers Network",
+    department: "Media Management",
+    role: "Website Manager",
+    rank: "Regular Staffer",
+    hierarchy: [
+      "Intern",
+      "Regular Staffer",
+      "Senior Staffer",
+      "Vice Head",
+      "Head / Executive Board",
+      "Top 3",
+    ],
+    description:
+      "Contributed to the development and maintenance of the organization’s main website by building and improving frontend components. Collaborated with designers and fellow developers to ensure responsive layouts, clean UI, and consistent branding across pages.",
+  },
+];
 
   const skills = {
     properties: [
@@ -419,6 +437,80 @@ Cognitively, my strong skills in numerical reasoning, verbal comprehension, spat
       </motion.div>
     ))}
   </motion.div>
+
+
+{/* Organizations Section */}
+<motion.div
+  className="m-16 px-8 py-10 bg-gray-100 rounded-3xl shadow-xl"
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+>
+  <h2 className="text-4xl font-bold text-gray-800 font-mono mb-6">
+    Organizations Involved
+  </h2>
+
+  <div className="border-b-4 border-gray-700 mb-8 w-full"></div>
+
+  {organizations.map((org, index) => (
+    <motion.div
+      key={index}
+      className="bg-white rounded-2xl shadow-md p-6 mb-6"
+      initial={{ opacity: 0, x: -30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.4 }}
+      viewport={{ once: true }}
+    >
+      
+      <h3 className="text-2xl font-bold font-mono text-gray-800">
+        {org.name}
+      </h3>
+
+      <p className="text-lg font-mono text-gray-600 mt-1">
+        {org.department}
+      </p>
+
+      <p className="text-lg font-mono mt-2">
+        <span className="font-semibold text-gray-700">Role:</span>{" "}
+        {org.role}
+      </p>
+
+      <p className="text-lg font-mono mt-1">
+        <span className="font-semibold text-gray-700">Rank:</span>{" "}
+        <span className="bg-slate-200 px-3 py-1 rounded-lg text-sm ml-1">
+          {org.rank}
+        </span>
+      </p>
+
+      <p className="text-md font-mono text-gray-700 mt-4 leading-relaxed">
+        {org.description}
+      </p>
+
+      {/* Hierarchy */}
+      <div className="mt-5">
+        <p className="font-semibold font-mono text-gray-700 mb-2">
+          Organizational Hierarchy:
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {org.hierarchy.map((level, i) => (
+            <span
+              key={i}
+              className={`px-3 py-1 rounded-full text-sm font-mono shadow
+                ${
+                  level === org.rank
+                    ? "bg-slate-700 text-white"
+                    : "bg-slate-200 text-gray-700"
+                }`}
+            >
+              {level}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  ))}
+</motion.div>
 
       {/* {PCK Section} */}
         <motion.div
