@@ -324,6 +324,74 @@ Cognitively, my strong skills in numerical reasoning, verbal comprehension, spat
           </Link>
         </div>
       </motion.div>
+
+      {/* Experience Section */}
+<motion.div
+  className="m-16 px-8 py-10 bg-gray-100 rounded-3xl shadow-xl"
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+>
+  <h2 className="text-4xl font-bold text-gray-800 font-mono mb-6">
+    Experience
+  </h2>
+  <div className="border-b-4 border-gray-700 mb-8 w-full"></div>
+
+  <motion.div
+    className="flex flex-col md:flex-row bg-white shadow-md rounded-2xl overflow-hidden"
+    whileHover={{ scale: 1.02 }}
+    transition={{ type: "spring", stiffness: 200 }}
+  >
+    {/* Company Logo */}
+    <div className="bg-slate-200 flex justify-center items-center p-6 md:w-1/4">
+      <Image
+        src="/Eastwest.png" // add logo to public folder
+        width={140}
+        height={140}
+        alt="EastWest Bank"
+        className=""
+      />
+    </div>
+
+    {/* Experience Details */}
+    <div className="flex flex-col justify-center p-6 md:w-3/4 font-mono text-gray-800">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+        <h3 className="text-2xl font-bold">
+          Quality Assurance Intern
+        </h3>
+        <span className="bg-indigo-600 text-white font-semibold text-lg px-4 py-1 rounded-xl mt-2 md:mt-0">
+          EastWest Bank
+        </span>
+      </div>
+
+      <p className="text-md italic text-gray-600 mb-4">
+        Internship · Software Quality Assurance
+      </p>
+
+      <ul className="list-disc pl-6 space-y-2 text-lg text-gray-700">
+        <li>
+          Designed and executed manual test cases for internal banking systems,
+          ensuring functionality aligned with business requirements.
+        </li>
+        <li>
+          Performed regression and exploratory testing to identify defects
+          across multiple application modules.
+        </li>
+        <li>
+          Documented bugs clearly and collaborated with developers to
+          validate fixes and retests.
+        </li>
+        <li>
+          Gained exposure to SDLC, QA workflows, and enterprise-level systems
+          in a regulated financial environment.
+        </li>
+      </ul>
+    </div>
+  </motion.div>
+</motion.div>
+
+
   {/* Projects Section */}
   <motion.div
     className="m-16 flex flex-col bg-white shadow-lg rounded-xl p-5"
